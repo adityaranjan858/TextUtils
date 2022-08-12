@@ -58,37 +58,25 @@ function TextForm(props) {
           onChange={handleOnChange}
           id="mybox"
           rows="8"
-          style={{color : props.mode === "light" ? "black" : "white", backgroundColor : props.mode === "light" ? "white" : "grey" }}
+          style={{color : props.mode === "light" ? "black" : "white", backgroundColor : props.mode === "light" ? "white" : "#7a8fcd" }}
         ></textarea>
       </div>
-      <div className="d-flex justify-content-around">
-      <button type="submit" className="btn btn-primary" onClick={handleUpCase}>
-        Convert to UpperCase
-      </button>
-      <button type="submit" className="btn btn-primary" onClick={handleLoCase}>
-        Convert to LowerCase
-      </button>
-      <button type="submit" className="btn btn-primary" onClick={handleClearText}>
-        Clear Text
-      </button>
-      <button type="submit" className="btn btn-primary" onClick={handleCaCase}>
-        Convert to Capitalize
-      </button>
-      <button type="submit" className="btn btn-primary" onClick={handleInCaCase}>
-        Convert to Inverse Capitalize
-      </button>
-      <button type="submit" className="btn btn-primary" onClick={handleCopyCase}>
-        Copy Text
-      </button>
+      <div className="d-flex justify-content-around flex-wrap">
+      <button disabled={text.length===0} type="submit" className="btn btn-primary my-1" onClick={handleUpCase}>Convert to UpperCase</button>
+      <button disabled={text.length===0} type="submit" className="btn btn-primary my-1" onClick={handleLoCase}>Convert to LowerCase</button>
+      <button disabled={text.length===0} type="submit" className="btn btn-primary my-1" onClick={handleClearText}>Clear Text</button>
+      <button disabled={text.length===0} type="submit" className="btn btn-primary my-1" onClick={handleCaCase}>Convert to Capitalize</button>
+      <button disabled={text.length===0} type="submit" className="btn btn-primary my-1" onClick={handleInCaCase}>Convert to Inverse Capitalize</button>
+      <button disabled={text.length===0} type="submit" className="btn btn-primary my-1" onClick={handleCopyCase}>Copy Text</button>
       </div>
 
       <div className="my-4" style={{color : props.mode === "light" ? "black" : "white"}}>
         <h3>Your text Summary</h3>
-        <p>Number of words : {text.split(" ").length - 1} <br /> number of characters : {text.length}.  <br />
-        {0.008 * text.split(" ").length} minutes to read
+        <p>Number of words : {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} <br /> number of characters : {text.length}.  <br />
+        {0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} minutes to read
         </p>
         <h4>Preview</h4>
-        {text.length>0 ? text.toLowerCase() : "Enter something in textarea to preview."}
+        {text.length>0 ? text.toLowerCase() : "Nothing to preview!"}
       </div>
     </>
   );
