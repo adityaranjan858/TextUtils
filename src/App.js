@@ -36,11 +36,12 @@ function App() {
   }
   return (
     <Router>
-      <Navbar title="TextUtils" aboutText="About TextUtils" mode={mode} toggleMode={togglemode} />
+      <Navbar title="TextUtils" aboutText="About" mode={mode} toggleMode={togglemode} />
       <Alert alert={alertmsg} />
       <div className='container my-5'>
+      <TextForm showMsg={showMsg} heading="Try TextUtils - Word Counter, character Counter, Copy Text etc." mode={mode} />
         <Routes>
-          <Route exact path='/TextUtils/home' element={<TextForm showMsg={showMsg} heading="Try TextUtils - Word Counter, character Counter, Copy Text etc." mode={mode} />}></Route>
+          <Route exact path='/home' element={<TextForm showMsg={showMsg} heading="Try TextUtils - Word Counter, character Counter, Copy Text etc." mode={mode} />}></Route>
           <Route exact path='/about' element={<About mode={mode}/>}></Route>
         </Routes>
       </div>
