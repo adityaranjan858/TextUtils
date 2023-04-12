@@ -40,7 +40,7 @@ function App() {
       <Alert alert={alertmsg} />
       <div className='container my-5'>
         <Routes>
-          <Route exact path='/home' element={<TextForm showMsg={showMsg} heading="Try TextUtils - Word Counter, character Counter, Copy Text etc." mode={mode} />}></Route>
+          <Route exact path='/TextUtils/home' element={<TextForm showMsg={showMsg} heading="Try TextUtils - Word Counter, character Counter, Copy Text etc." mode={mode} />}></Route>
           <Route exact path='/about' element={<About mode={mode}/>}></Route>
         </Routes>
       </div>
