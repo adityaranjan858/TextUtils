@@ -58,7 +58,7 @@ function TextForm(props) {
           onChange={handleOnChange}
           id="mybox"
           rows="8"
-          style={{color : props.mode === "light" ? "black" : "white", backgroundColor : props.mode === "light" ? "white" : "#7a8fcd" }}
+          style={{color : props.mode === "light" ? "black" : "white", backgroundColor : props.mode === "light" ? "white" : "#90a0cd7a" }}
         ></textarea>
       </div>
       <div className="d-flex justify-content-around flex-wrap">
